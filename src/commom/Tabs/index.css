@@ -1,0 +1,30 @@
+.com-tab{
+  width: 100%;
+}
+
+.c-t-wrap{
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.c-t-nav{
+  height: 54px;
+  line-height: 54px;
+  border-bottom: 0.5px solid #eee;
+}
+
+.c-t-n-item{
+  padding: 16px 14px 12px 14px;
+  line-height: 24px;
+  margin: 0 0 0 32px;
+  color:#888;
+}
+
+.c-t-content{
+  padding: 16px 14px;
+}
+
+.c-t-n-i-active{
+  border-bottom: 2px solid #1890ff;
+  color:#1890ff;
+}

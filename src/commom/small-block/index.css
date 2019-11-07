@@ -1,0 +1,38 @@
+.com-smallb{
+  width: 25%;
+  box-sizing: border-box;
+  padding: 0 12px;
+}
+
+.c-s-wrap{
+  border-radius: 3px;
+  padding: 20px 24px 8px;
+  background-color: #fff;
+}
+
+.c-s-nav{
+  color: rgba(0,0,0,.45);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.c-s-num{
+    color: rgba(0,0,0,.85);
+    font-size: 30px;
+    line-height: 38px;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+.c-s-bottom{
+  margin-top: 8px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-top: 1px solid #e8e8e8;
+  font-size: 13px;
+}
+
+.c-s-b-title{
+  margin-right: 8px;
+  color: #888;
+}

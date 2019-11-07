@@ -1,0 +1,13 @@
+.r-container{
+  flex:3;
+  height: 100%;
+  background-color: #f0f2f5;
+}
+
+.r-header{
+  height: 64px;
+  padding: 0 18px;
+  line-height: 64px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+}
