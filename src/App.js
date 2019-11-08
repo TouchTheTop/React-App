@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import './assets/iconfont/iconfont.css'
 import Left from './frame/left'
 import Right from './frame/right'
 

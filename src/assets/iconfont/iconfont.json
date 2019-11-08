@@ -1,0 +1,16 @@
+{
+  "id": "1499859",
+  "name": "react-app",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3640210",
+      "name": "展开",
+      "font_class": "zhankai",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    }
+  ]
+}

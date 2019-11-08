@@ -19,9 +19,9 @@ class Table extends React.Component {
       </th>
     ))
     const dataItems = _this.data.map((item, index) => (
-      <tr className="c-t-h-tr" key={item.key}>
+      <tr className="c-t-h-tr" key={item.key + '-p-' + index}>
         {_this.header.map(header => (
-          <td className="c-t-h-tr-td" key={header.key}>
+          <td className="c-t-h-tr-td" key={header.key + '-c-' + index}>
             {item[header.key]}
           </td>
         ))}
