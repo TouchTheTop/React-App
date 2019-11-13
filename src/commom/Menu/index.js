@@ -1,5 +1,7 @@
 import React from 'react'
 import './index.css'
+import Header from './header'
+import { ThemeContext } from '../../context/themes'
 
 class Menu extends React.Component {
   constructor(props) {
@@ -50,6 +52,7 @@ class Menu extends React.Component {
 
   render() {
     const _this = this.state
+    let theme = this.context.theme
     const menu = _this.data.map(t => (
       <li>
         <div
@@ -58,10 +61,13 @@ class Menu extends React.Component {
             this.menuClick(e, 1)
           }}
         >
-          <span>{t.title}</span>
-          <span className="iconfont icon-zhankai"></span>
+          <span style={{ color: theme.backgroundText }}>{t.title}</span>
+          <span
+            style={{ color: theme.backgroundText }}
+            className="iconfont icon-zhankai"
+          ></span>
         </div>
-        <ul className="c-m-child">
+        <ul className="c-m-child" style={{ background: theme.secondColor }}>
           {t.child.map(v => (
             <li
               className="c-m-c-item"
@@ -69,15 +75,18 @@ class Menu extends React.Component {
                 this.itemClick(e)
               }}
             >
-              {v}
+              <a href="#" style={{ color: theme.backgroundText }}>
+                {v}
+              </a>
             </li>
           ))}
         </ul>
       </li>
     ))
     return (
-      <div className="com-menu">
+      <div className="com-menu" style={{ background: theme.backgroundColor }}>
         <div className="c-m-wrap">
+          <Header />
           <ul>{menu}</ul>
         </div>
       </div>
@@ -85,4 +94,5 @@ class Menu extends React.Component {
   }
 }
 
+Menu.contextType = ThemeContext
 export default Menu

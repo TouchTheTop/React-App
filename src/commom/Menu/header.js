@@ -1,19 +1,25 @@
 import React from 'react'
 import './index.css'
 import logo from '../../logo.svg'
+import { ThemeContext } from '../../context/themes'
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
+    const theme = this.context.theme
     return (
-      <div className="l-header">
+      <div
+        className="l-header"
+        style={{
+          color: theme.backgroundText
+        }}
+      >
         <img src={logo} className="l-h-logo" alt="logo" />
         Christine's APP Pro
       </div>
     )
   }
 }
+
+Header.contextType = ThemeContext
 
 export default Header

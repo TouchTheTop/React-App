@@ -11,6 +11,27 @@
       "font_class": "zhankai",
       "unicode": "e613",
       "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "9626865",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e86d",
+      "unicode_decimal": 59501
+    },
+    {
+      "icon_id": "11707682",
+      "name": "展开",
+      "font_class": "arrorw-right-copy",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "11707685",
+      "name": "展开",
+      "font_class": "arrorw-left-copy",
+      "unicode": "e615",
+      "unicode_decimal": 58901
     }
   ]
 }

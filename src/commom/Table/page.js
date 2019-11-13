@@ -1,8 +1,4 @@
 import React from 'react'
-import ArrowLeft from '../../assets/svg/arrow-left.svg'
-import ArrowRight from '../../assets/svg/arrow-right.svg'
-import More from '../../assets/svg/more.svg'
-import ReactSVG from 'react-svg'
 import './index.css'
 
 class Page extends React.Component {
@@ -25,6 +21,9 @@ class Page extends React.Component {
   }
 
   pageChange(p) {
+    if (p < 1 || p > this.state.len) {
+      return
+    }
     this.setState({
       choosedIndex: p
     })
@@ -107,19 +106,36 @@ class Page extends React.Component {
 
     return (
       <div className="com-page flex-row flex-vertical-center">
-        <img src={ArrowLeft} className="c-p-icon" alt="" />
+        {/* <img src={ArrowLeft} className="c-p-icon" alt="" /> */}
+        <i
+          onClick={e => {
+            this.pageChange(_this.choosedIndex - 1)
+          }}
+          className={[
+            'iconfont icon-arrorw-left-copy c-p-icon',
+            _this.showLeftMore ? 'c-p-arrorw-active' : ''
+          ].join(' ')}
+        ></i>
         <ul className="flex-row flex-vertical-center">
           {this.buildItems(_this.beforeArr)}
           {_this.showLeftMore > 0 && (
-            <img src={More} className="c-p-icon" alt="" />
+            <i className="iconfont icon-gengduo c-p-icon"></i>
           )}
           {this.buildItems(_this.centerArr)}
           {_this.showRightMore > 0 && (
-            <img src={More} className="c-p-icon" alt="" />
+            <i className="iconfont icon-gengduo c-p-icon"></i>
           )}
           {this.buildItems(_this.afterArr)}
         </ul>
-        <img src={ArrowRight} className="c-p-icon" alt="" />
+        <i
+          onClick={e => {
+            this.pageChange(_this.choosedIndex + 1)
+          }}
+          className={[
+            'iconfont icon-arrorw-right-copy c-p-icon',
+            _this.showRightMore ? 'c-p-arrorw-active' : ''
+          ].join(' ')}
+        ></i>
       </div>
     )
   }

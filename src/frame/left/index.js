@@ -1,6 +1,5 @@
 import React from 'react'
 import './index.css'
-import Header from './header'
 import Menu from '../../commom/Menu'
 
 class Left extends React.Component {
@@ -18,7 +17,6 @@ class Left extends React.Component {
   render() {
     return (
       <div className="l-container">
-        <Header />
         <Menu data={this.state.menu} />
       </div>
     )

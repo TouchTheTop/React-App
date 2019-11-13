@@ -3,14 +3,29 @@ import './App.css'
 import './assets/iconfont/iconfont.css'
 import Left from './frame/left'
 import Right from './frame/right'
-
-function App() {
-  return (
-    <div className="App flex-row">
-      <Left />
-      <Right />
-    </div>
-  )
+import { ThemeContext, themes } from './context/themes'
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.toggleTheme = () => {
+      this.setState(state => ({
+        theme: state.theme === themes.dark ? themes.light : themes.dark
+      }))
+    }
+    this.state = {
+      theme: themes.dark,
+      toggleTheme: this.toggleTheme
+    }
+  }
+  render() {
+    return (
+      <div className="App flex-row">
+        <ThemeContext.Provider value={this.state}>
+          <Left />
+          <Right />
+        </ThemeContext.Provider>
+      </div>
+    )
+  }
 }
-
 export default App
