@@ -46,3 +46,9 @@ a{
 .flex-vertical-center{
   align-items: center;
 }
+
+.app-wrap{
+  padding: 16px 12px;
+  background-color: #fff;
+  border-radius: 3px;
+}
