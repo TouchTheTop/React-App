@@ -23,6 +23,7 @@ class Select extends React.Component {
     let theme = this.context.theme
     const items = _this.data.map((v, i) => (
       <li
+        key={i}
         onClick={e => {
           this.change(i)
         }}

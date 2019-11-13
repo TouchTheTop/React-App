@@ -2,6 +2,7 @@ import React from 'react'
 import './index.css'
 import Header from './header'
 import { ThemeContext } from '../../context/themes'
+import { _ } from '../../util/common'
 
 class Menu extends React.Component {
   constructor(props) {
@@ -12,29 +13,50 @@ class Menu extends React.Component {
     this.changeStatus = this.changeStatus.bind(this)
   }
 
+  componentDidMount() {
+    console.log(_.isArray([]))
+  }
+
   menuClick(e) {
     e.stopPropagation()
     let dom = e.currentTarget
-    let child = dom.nextElementSibling
-    this.clearActive('c-m-child')
-    this.changeStatus(child)
+    let sub = dom.nextElementSibling
+    this.clearActive(['c-m-sub', 'c-m-c-item'])
+    this.changeStatus(sub)
   }
 
-  clearActive(className) {
-    let activeDom = document.getElementsByClassName(className)
-    for (let i = 0, len = activeDom.length; i < len; i++) {
-      if (activeDom[i].className.indexOf('active') < 0) {
+  clearActive(classNames) {
+    if (_.isArray(classNames)) {
+      for (let j = 0, len = classNames.length; j < len; j++) {
+        let activeDom = document.getElementsByClassName(classNames[j])
+        this.clearSubActive(activeDom)
+      }
+    } else {
+      let activeDom = document.getElementsByClassName(classNames)
+      this.clearSubActive(activeDom)
+    }
+  }
+
+  clearSubActive(obj) {
+    if (!obj) {
+      return
+    }
+    for (let i = 0, len = obj.length; i < len; i++) {
+      if (obj[i].className.indexOf('active') < 0) {
         continue
       }
-      activeDom[i].className = activeDom[i].className.slice(
+      obj[i].className = obj[i].className.slice(
         0,
-        activeDom[i].className.indexOf('active')
+        obj[i].className.indexOf('active')
       )
     }
   }
 
   changeStatus(dom) {
-    let className = dom.className.split(' '),
+    if (!dom) {
+      return
+    }
+    let className = dom.className ? dom.className.split(' ') : '',
       index = className.indexOf('active')
     if (index > 0) {
       className.splice(index, 1)
@@ -54,32 +76,40 @@ class Menu extends React.Component {
     const _this = this.state
     let theme = this.context.theme
     const menu = _this.data.map(t => (
-      <li>
-        <div
-          className="c-m-title flex-two-sides"
+      <li key={t.title}>
+        <a
+          className="c-m-link"
+          href={'#' + t.path}
+          style={{ color: theme.backgroundText }}
           onClick={e => {
             this.menuClick(e, 1)
           }}
         >
-          <span style={{ color: theme.backgroundText }}>{t.title}</span>
-          <span
-            style={{ color: theme.backgroundText }}
-            className="iconfont icon-zhankai"
-          ></span>
-        </div>
-        <ul className="c-m-child" style={{ background: theme.secondColor }}>
-          {t.child.map(v => (
-            <li
-              className="c-m-c-item"
-              onClick={e => {
-                this.itemClick(e)
-              }}
-            >
-              <a href="#" style={{ color: theme.backgroundText }}>
-                {v}
-              </a>
-            </li>
-          ))}
+          <div className="c-m-title flex-two-sides">
+            {t.title}
+            {t.sub && (
+              <span
+                style={{ color: theme.backgroundText }}
+                className="iconfont icon-zhankai"
+              ></span>
+            )}
+          </div>
+        </a>
+        <ul className="c-m-sub" style={{ background: theme.secondColor }}>
+          {t.sub &&
+            t.sub.map(v => (
+              <li
+                key={v.title}
+                className="c-m-c-item"
+                onClick={e => {
+                  this.itemClick(e)
+                }}
+              >
+                <a href={'#' + v.path} style={{ color: theme.backgroundText }}>
+                  {v.title}
+                </a>
+              </li>
+            ))}
         </ul>
       </li>
     ))

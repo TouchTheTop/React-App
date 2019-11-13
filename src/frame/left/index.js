@@ -1,15 +1,16 @@
 import React from 'react'
 import './index.css'
 import Menu from '../../commom/Menu'
+import TreeData from './tree'
 
 class Left extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       menu: [
-        { title: 'Menu1', child: [1, 2, 3] },
-        { title: 'Menu2', child: ['a1', 'a2', 'a3'] },
-        { title: 'Menu3', child: [1] }
+        { title: 'Menu1', sub: [1, 2, 3] },
+        { title: 'Menu2', sub: ['a1', 'a2', 'a3'] },
+        { title: 'Menu3', sub: [1] }
       ]
     }
   }
@@ -17,7 +18,7 @@ class Left extends React.Component {
   render() {
     return (
       <div className="l-container">
-        <Menu data={this.state.menu} />
+        <Menu data={TreeData} />
       </div>
     )
   }

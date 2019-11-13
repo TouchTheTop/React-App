@@ -6,6 +6,7 @@ function renderRoutes(routes, extraProps = {}, switchProps = {}) {
     <Switch {...switchProps}>
       {routes.map((route, i) => (
         <Route
+          key={route.key || i}
           path={route.path}
           exact={route.exact}
           component={route.component}
@@ -18,8 +19,9 @@ function renderRoutes(routes, extraProps = {}, switchProps = {}) {
             ></Route>
           )}
           {route.routes &&
-            route.routes.map(child => (
+            route.routes.map((child, j) => (
               <Route
+                key={child.key || j}
                 path={child.path}
                 exact={child.exact}
                 component={child.component}
