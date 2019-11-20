@@ -10,6 +10,10 @@ export default [
       {
         title: '按钮组',
         path: '/app/button'
+      },
+      {
+        title: '折叠面板',
+        path: '/app/collapse'
       }
     ]
   }

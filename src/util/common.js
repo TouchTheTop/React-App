@@ -17,6 +17,11 @@
     return toString.call(obj) === '[object Array]'
   }
 
+  _.isArrayLike = function(obj) {
+    // 是否有length length是否超过可计算长度 且length的类型是数字且大于等于0
+    return obj.length && typeof obj === 'number' && obj.length >= 0
+  }
+
   _.functions = function(obj) {
     let names = []
     for (var key in obj) {

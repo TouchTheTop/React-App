@@ -1,54 +1,138 @@
-html,body{
-  height: 100%;
+html,
+body {
+	height: 100%;
 }
 
-#root{
-  height: 100%;
+#root {
+	height: 100%;
 }
 
-ul{
-  margin:0;
-  padding:0;
-  list-style: none;
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
-a{
-  text-decoration: none;
+a {
+	text-decoration: none;
 }
 
 .App {
-  height: 100%;
+	height: 100%;
 }
 
 .App-link {
-  color: #09d3ac;
+	color: #09d3ac;
 }
 
 
-.flex-row{
-  display: flex;
-  flex-direction: row;
+.flex-row {
+	display: flex;
+	flex-direction: row;
 }
 
-.flex-two-sides{
-  display: flex;
-  justify-content: space-between;
+.flex-two-sides {
+	display: flex;
+	justify-content: space-between;
 }
 
-.color-active{
-  color:#1890ff;
+.color-active {
+	color: #1890ff;
 }
 
-.flex-1{
-  flex:1;
+.flex-1 {
+	flex: 1;
 }
 
-.flex-vertical-center{
-  align-items: center;
+.flex-vertical-center {
+	align-items: center;
 }
 
-.app-wrap{
-  padding: 16px 12px;
-  background-color: #fff;
-  border-radius: 3px;
+.app-wrap {
+	padding: 16px 12px;
+	background-color: #fff;
+	border-radius: 3px;
+}
+
+[class*="--default"] {
+	color: #666;
+	border-color: #ddd;
+}
+
+[class*="--primary"] {
+	color: #fff;
+	background-color: #409eff;
+	border-color: #409eff;
+}
+
+[class*="--danger"] {
+	color: #fff;
+	background-color: #f56c6c;
+	border-color: #f56c6c;
+}
+
+[class*="--warning"] {
+	color: #fff;
+	background-color: #e6a23c;
+	border-color: #e6a23c;
+}
+
+[class*="--success"] {
+	color: #fff;
+	background-color: #67c23a;
+	border-color: #67c23a;
+}
+
+
+button:disabled[class*="--default"],button.is-loading[class*="--default"]{
+	color: #c0c4cc;
+	border-color: #ebeef5;
+}
+button:disabled[class*="--primary"],button.is-loading[class*="--primary"]{
+	background-color: #b3cce6;
+	border-color: #b3cce6;
+}
+button:disabled[class*="--success"],button.is-loading[class*="--success"]{
+	background-color: #b3e19d;
+	border-color: #b3e19d;
+}
+
+button:disabled[class*="--warning"],button.is-loading[class*="--warning"]{
+	background-color: #f3d19e;
+	border-color: #f3d19e;
+}
+
+button:disabled[class*="--danger"],button.is-loading[class*="--danger"]{
+	background-color: #fab6b6;
+	border-color: #fab6b6;
+}
+
+button:disabled:hover{
+cursor: not-allowed;
+}
+
+
+.com-title-h2{
+	font-size: 18px;
+	color: #000;
+	font-weight: 400;
+}
+
+.com-block{
+	margin-bottom: 36px;
+}
+
+
+@keyframes rotating
+{
+0%   {	transform: rotate(0deg);}
+100% {	transform: rotate(360deg);}
+}
+
+
+.com-loading-icon{
+	font-size: 12px !important;
+	display: inline-block;
+	vertical-align: middle;
+	animation: rotating 2s linear infinite;
 }

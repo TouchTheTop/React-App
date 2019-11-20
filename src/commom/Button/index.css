@@ -1,0 +1,16 @@
+.c-b-button{
+  padding: 6px 14px;
+  font-size: 14px;
+  border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+  display: inline-block;
+}
+
+.c-b-button span{
+  margin-left: 4px;
+}
+
+.c-b-button:hover{
+  cursor: pointer;
+}
