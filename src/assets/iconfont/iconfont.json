@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "721659",
+      "name": "代码",
+      "font_class": "ai-code",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
       "icon_id": "1239930",
       "name": "加载",
       "font_class": "jiazai2",
@@ -18,6 +25,20 @@
       "font_class": "zhankai",
       "unicode": "e613",
       "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "6337464",
+      "name": "字体代码",
+      "font_class": "zitidaima",
+      "unicode": "ec83",
+      "unicode_decimal": 60547
+    },
+    {
+      "icon_id": "7587935",
+      "name": "复制",
+      "font_class": "fuzhi",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
     },
     {
       "icon_id": "9626865",

@@ -1,5 +1,6 @@
 import React from 'react'
-import './index.css'
+import './index.scss'
+import PropTypes from 'prop-types'
 
 class Button extends React.Component {
   constructor(props) {
@@ -39,6 +40,14 @@ class Button extends React.Component {
       </button>
     )
   }
+}
+
+Button.propTypes = {
+  type: PropTypes.string
+}
+
+Button.defaultProps = {
+  type: 'default'
 }
 
 export default Button

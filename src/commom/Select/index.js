@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css'
+import './index.scss'
 import { ThemeContext } from '../../context/themes'
 
 class Select extends React.Component {

@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css'
+import './index.scss'
 import Header from './header'
 import { ThemeContext } from '../../context/themes'
 import { _ } from '../../util/common'

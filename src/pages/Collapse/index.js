@@ -1,6 +1,6 @@
 import React from 'react'
 import Collapse from '../../commom/Collapse'
-import './index.css'
+import './index.scss'
 
 class ButtonPage extends React.Component {
   render() {

@@ -1,0 +1,47 @@
+@import '../../assets/main';
+
+$panel-padding-center:24px;
+$panel-border-color: #ebedf0;
+$panel-border: 1px solid $panel-border-color;
+$panel-border-dotted: 1px dotted $panel-border-color;
+
+.cpt-codepanel{
+    color: rgba(0,0,0,0.65);
+    border: $panel-border;
+
+    .cpt-c-panel{
+      padding: 42px $panel-padding-center 50px;
+    }
+    
+    .cpt-c-content{
+      position: relative;
+      padding: 21px $panel-padding-center 24px;
+      border-top: $panel-border;  
+      .cpt-c-c-title{
+        position: absolute;
+        padding: 3px 8px;
+        color:$im-color;
+        font-size: $fontSize;
+        line-height: $fontSize;
+        top:-10px;
+        background-color: $bg-white;
+      }
+    }
+    
+    .cpt-c-bottom{
+      padding: 12px $panel-padding-center 12px;
+      border-top: $panel-border-dotted;      
+      text-align: center;
+      span[class*="icon-"]{
+        margin-left: 12px;
+        color:$im-color;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+
+    .cpt-c-code{
+      font-size: $fontSize;
+      line-height: 20px;
+    }
+}

@@ -46,6 +46,43 @@
     return _
   }
 
+  _.keys = function(obj) {
+    return Object.keys(obj)
+  }
+
+  _.toString = function(s) {
+    return '' + s
+  }
+
+  var escapeMap = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#x27;',
+    '`': '&#x60;'
+  }
+
+  var createEscaper = function(map) {
+    var escaper = function(match) {
+      return map[match]
+    }
+
+    // 需要匹配的子表达式
+    var scource = '(?:' + _.keys(map).join('|') + ')'
+    // 转换为 RegExp 对象
+    var testReg = RegExp(scource)
+    var replaceReg = RegExp(scource, 'g')
+
+    return function(s) {
+      s = s == null ? '' : '' + s
+      // 判断是否需要逃逸
+      return testReg.test(s) ? s.replace(replaceReg, escaper) : s
+    }
+  }
+
+  _.escaper = createEscaper(escapeMap)
+
   _.mixin(_)
 
   if (typeof exports !== void 0) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css'
+import './index.scss'
 import logo from '../../logo.svg'
 import { ThemeContext } from '../../context/themes'
 

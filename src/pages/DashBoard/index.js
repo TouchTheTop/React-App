@@ -1,7 +1,7 @@
 import React from 'react'
 import { SmallBlock, Tabs, Table } from '../../commom/index'
 
-import './index.css'
+import './index.scss'
 
 class DashBoard extends React.Component {
   constructor(props) {

@@ -1,9 +1,11 @@
 import React from 'react'
-import './App.css'
+import './App.scss'
 import './assets/iconfont/iconfont.css'
 import Left from './frame/left'
 import Right from './frame/right'
 import { ThemeContext, themes } from './context/themes'
+import '../node_modules/react-highlight/node_modules/highlight.js/styles/solarized-light.css'
+
 class App extends React.Component {
   constructor(props) {
     super(props)
