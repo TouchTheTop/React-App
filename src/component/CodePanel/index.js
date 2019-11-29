@@ -3,7 +3,9 @@ import './index.scss'
 import PropTypes from 'prop-types'
 import Highlight from 'react-highlight'
 import { _ } from '../../util/common'
-var beautify = require('js-beautify').js
+import prettier from 'prettier/standalone'
+import parserHTML from 'prettier/parser-html'
+
 // import beautify from 'js-beautify'
 class CodePanel extends React.Component {
   constructor(props) {
@@ -39,9 +41,10 @@ class CodePanel extends React.Component {
         </div>
         {this.state.show && (
           <div className="cpt-c-code">
-            <Highlight language="javascript">
-              {beautify('' + this.props.code, {
-                indent_size: 2
+            <Highlight language="html">
+              {prettier.format(this.props.code, {
+                parser: 'html',
+                plugins: [parserHTML]
               })}
             </Highlight>
           </div>
